@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Bhumi Please Click 🥺</title>
+
+  <style>
+
+    body {
+
+      background: linear-gradient(to right, #ffe6f0, #fff0f5);
+
+      font-family: 'Segoe UI', sans-serif;
+
+      text-align: center;
+
+      padding: 50px;
+
+    }
+
+    h1 {
+
+      font-size: 2.5em;
+
+      color: #cc3366;
+
+      margin-bottom: 30px;
+
+    }
+
+    #clickArea {
+
+      display: inline-block;
+
+      background-color: #ff66a3;
+
+      color: white;
+
+      padding: 20px 40px;
+
+      border-radius: 30px;
+
+      font-size: 22px;
+
+      cursor: pointer;
+
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+      transition: 0.3s;
+
+    }
+
+    #clickArea:hover {
+
+      background-color: #e60073;
+
+    }
+
+    .word {
+
+      font-size: 30px;
+
+      color: #993355;
+
+      margin-top: 20px;
+
+      opacity: 0;
+
+      transform: scale(0.8);
+
+      animation: popIn 0.6s forwards;
+
+    }
+
+    @keyframes popIn {
+
+      to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+      }
+
+    }
+
+    #heart {
+
+      font-size: 40px;
+
+      margin-top: 40px;
+
+      animation: beat 1s infinite;
+
+      color: #ff1a75;
+
+    }
+
+    @keyframes beat {
+
+        0%, 100% { transform: scale(1); }
+
+      50% { transform: scale(1.2); }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Bhumi, yha pr click kr ❤️</h1>
+
+  <div id="clickArea">CLICK HERE 💖</div>
+
+  <div id="wordsContainer"></div>
+
+  <div id="heart">💗</div>
+
+  <script>
+
+    const words = [
+
+      "Aap 🫵",
+
+      "Mujhse 😢",
+
+      "Naraaz 😔",
+
+      "Ho 😟",
+
+      "Kya? 🥺",
+
+      "Toh 😞",
+
+      "Main 🙇‍♂️",
+
+      "Dil Se 💔",
+
+      "SORRY 😭",
+
+      "Bolta Hoon 💌"
+
+    ];
+
+    const clickArea = document.getElementById("clickArea");
+
+    const wordsContainer = document.getElementById("wordsContainer");
+
+    clickArea.addEventListener("click", () => {
+
+      wordsContainer.innerHTML = "";
+
+      words.forEach((word, index) => {
+
+        setTimeout(() => {
+
+          const div = document.createElement("div");
+
+          div.className = "word";
+
+          div.textContent = word;
+
+          wordsContainer.appendChild(div);
+
+        }, index * 600); // Delay between each word
+
+      });
+
+    });
+
+  </script>
+
+</body>
+
+</html>
